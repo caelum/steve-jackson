@@ -1,1 +1,10 @@
-<strong>Your exercise here</strong>
+<script>
+<%= @attempt.exercise.content.html_safe %>
+</script>
+<div id="rpg_text">Loading...</div>
+<div><ol id="rpg_options"></ol></div>
+
+<form id="rpg_form" method="POST" action="/exercises/<%=@attempt.exercise.id%>/attempts/<%=@attempt.id%>">
+	<input type="hidden" name="_method" value="put" />
+	<input type="hidden" name="path" id="rpg_path">
+</form>
