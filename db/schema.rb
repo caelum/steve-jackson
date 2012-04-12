@@ -11,17 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120406162929) do
+ActiveRecord::Schema.define(:version => 20120408142749) do
 
   create_table "gnarus_exercise_attempts", :force => true do |t|
     t.integer  "exercise_id"
     t.text     "return_uri"
-    t.text     "solution"
+    t.string   "author_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   add_index "gnarus_exercise_attempts", ["exercise_id"], :name => "index_gnarus_exercise_attempts_on_exercise_id"
+
+  create_table "gnarus_exercise_executions", :force => true do |t|
+    t.integer  "attempt_id"
+    t.text     "solution"
+    t.boolean  "suceeded"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "gnarus_exercise_executions", ["attempt_id"], :name => "index_gnarus_exercise_executions_on_attempt_id"
 
   create_table "gnarus_exercise_exercises", :force => true do |t|
     t.integer  "author_id"

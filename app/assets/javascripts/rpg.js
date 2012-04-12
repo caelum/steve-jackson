@@ -1,4 +1,5 @@
 function rpg(config) {
+	var SUCCESS = -1;
 	config.ui = config.ui || {};
 
 	var path = [];
@@ -29,8 +30,11 @@ function rpg(config) {
 			path.push([code, step]);
 			
 			if(step < 0) {
-				$('#rpg_path').val(path);
-				$('#rpg_form').submit();
+				function extract() {
+					return { solution : path,
+							 suceeded : step == SUCCESS };
+				}
+				gnarus.attemptForm(extract, function(){}, gnarus.returnUri).process();
 				return;
 			}
 			

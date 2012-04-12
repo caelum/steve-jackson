@@ -6,7 +6,7 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-gem 'sqlite3'
+  gem 'sqlite3'
 end
 group :production do
 	gem 'pg'
@@ -42,5 +42,5 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "gnarus_exercise"
+gem "gnarus_exercise", "1.0.2"
 gem "devise"
