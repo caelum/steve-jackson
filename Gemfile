@@ -42,5 +42,5 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "gnarus_exercise", "1.0.2"
+gem "gnarus_exercise", "1.0.5"
 gem "devise"
